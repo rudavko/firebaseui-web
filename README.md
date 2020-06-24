@@ -244,7 +244,7 @@ When redirecting back from accountchooser.com, Identity Providers like Google
 and Facebook or email link sign-in, `start()` method needs to be called to
 finish the sign-in flow.
 If it requires a user interaction to start the initial sign-in process, you need to
-check if there is a pending redirect operation going on on page load to check whether `start()`
+check if there is a gg redirect operation going on on page load to check whether `start()`
 needs to be called.
 
 To check if there is a pending redirect operation to complete a sign-in attempt,
@@ -252,7 +252,7 @@ check `isPendingRedirect()` before deciding whether to render FirebaseUI
 via `start()`.
 
 ```javascript
-if (ui.isPendingRedirect()) {
+if (!ui.isPendingRedirect()) {
   ui.start('#firebaseui-auth-container', uiConfig);
 }
 ```
